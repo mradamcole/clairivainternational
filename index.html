@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clairiva</title>
+  <script>
+    (function () {
+      const HOMEPAGE_URL = "home.html";
+      const VISIT_COUNT_STORAGE_KEY = "clairiva-visit-count";
+      const searchParams = new URLSearchParams(window.location.search);
+      const forceLandingPage = searchParams.get("showlandingpage")?.toLowerCase() === "true";
+
+      if (forceLandingPage) {
+        return;
+      }
+
+      let visitCount = 1;
+
+      try {
+        const savedCount = Number.parseInt(window.localStorage.getItem(VISIT_COUNT_STORAGE_KEY) || "0", 10);
+        visitCount = Number.isFinite(savedCount) ? savedCount + 1 : 1;
+        window.localStorage.setItem(VISIT_COUNT_STORAGE_KEY, String(visitCount));
+      } catch (error) {
+        visitCount = 1;
+      }
+
+      if (visitCount !== 1 && visitCount % 10 !== 0) {
+        searchParams.delete("showlandingpage");
+        const nextSearch = searchParams.toString();
+        const destination = `${HOMEPAGE_URL}${nextSearch ? `?${nextSearch}` : ""}${window.location.hash}`;
+        window.location.replace(destination);
+      }
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell" aria-label="Clairiva landing experience">
+    <canvas id="energy-canvas" aria-hidden="true"></canvas>
+    <div id="brand-wash" class="brand-wash" aria-hidden="true"></div>
+
+    <div class="earth-stage" aria-hidden="true">
+      <img
+        id="earth-image"
+        class="earth-image"
+        data-src="media/Rotating_earth_animated_transparent.gif"
+        alt=""
+        decoding="async"
+      >
+    </div>
+
+    <canvas id="energy-canvas-front" aria-hidden="true"></canvas>
+
+    <div class="brand-stage" aria-hidden="true">
+      <img
+        id="brand-logo"
+        class="brand-logo"
+        src="media/clairiva-logo.svg"
+        alt=""
+        decoding="async"
+      >
+      <div id="brand-wordmark" class="brand-wordmark">
+        <div id="brand-line-top" class="brand-line brand-line--top">CLAIRIVA</div>
+        <div id="brand-line-bottom" class="brand-line brand-line--bottom">INTERNATIONAL</div>
+      </div>
+    </div>
+
+    <p class="fallback-message" data-fallback hidden>
+      This experience needs WebGL support.
+    </p>
+  </main>
+
+  <noscript>This experience needs JavaScript enabled.</noscript>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

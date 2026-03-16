@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clairiva</title>
+  <script>
+    (function () {
+      const searchParams = new URLSearchParams(window.location.search);
+      const forceLandingPage = searchParams.get("showlandingpage")?.toLowerCase() === "true";
+
+      if (!forceLandingPage) {
+        return;
+      }
+
+      window.location.replace(`index.html${window.location.search}${window.location.hash}`);
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="home-shell" aria-label="Clairiva homepage">
+    <div class="page-orbit page-orbit--left" aria-hidden="true" data-parallax="0.16"></div>
+    <div class="page-orbit page-orbit--right" aria-hidden="true" data-parallax="0.11"></div>
+    <div class="page-grid" aria-hidden="true"></div>
+
+    <div class="brand-stage" aria-hidden="true">
+      <img
+        id="brand-logo"
+        class="brand-logo"
+        src="media/clairiva-logo.svg"
+        alt=""
+        decoding="async"
+      >
+      <div id="brand-wordmark" class="brand-wordmark">
+        <div id="brand-line-top" class="brand-line brand-line--top">CLAIRIVA</div>
+        <div id="brand-line-bottom" class="brand-line brand-line--bottom">INTERNATIONAL</div>
+      </div>
+    </div>
+
+    <div id="main-content" class="home-content">
+      <section class="section hero" id="hero">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">International Logistics. Regulatory Precision.</p>
+          <h1>Integrity Delivered. Reliability Assured.</h1>
+          <p class="hero__lede">
+            We provide full-service, white-glove international logistics, bridging the gap between
+            complex global regulations and your market success. With over 100 years of combined executive
+            experience, we don't just move products, we safeguard your supply chain.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#capabilities">Experience Frictionless Growth.</a>
+          </div>
+          <p class="hero__note">Built for highly regulated international markets.</p>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__panel hero__panel--back" data-parallax="0.1"></div>
+          <div class="hero__panel hero__panel--route" data-parallax="0.18"></div>
+
+          <div class="parallax-wrap parallax-wrap--card-a" data-parallax="0.24">
+            <article class="proof-card proof-card--compact">
+              <span class="proof-card__label">Pedigree</span>
+              <strong>100+ Years of Trust.</strong>
+              <p>Leadership shaped by the world's most regulated industries.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap parallax-wrap--card-b" data-parallax="0.19">
+            <article class="proof-card proof-card--compact">
+              <span class="proof-card__label">Compliance</span>
+              <strong>Beyond Borderless.</strong>
+              <p>Multi-jurisdictional expertise with EU-GMP proficiency.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap parallax-wrap--card-c" data-parallax="0.28">
+            <article class="proof-card proof-card--compact">
+              <span class="proof-card__label">Integrity</span>
+              <strong>Stability Verified.</strong>
+              <p>Release quality supported by rigorous lab results.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section philosophy" id="philosophy">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Our Philosophy</p>
+          <h2>A Foundation of Unwavering Trust</h2>
+          <p class="section-intro">
+            In an era of global volatility, the greatest asset a business can possess is a partner they
+            can trust implicitly. We have built our reputation on the pillars of Knowledge, Expertise,
+            and Absolute Integrity.
+          </p>
+        </div>
+
+        <div class="philosophy__watermark" aria-hidden="true" data-parallax="0.08">
+          Knowledge. Expertise. Integrity.
+        </div>
+
+        <div class="pillar-grid">
+          <article class="pillar-card" data-reveal>
+            <p class="pillar-card__index">01</p>
+            <h3>A Century of Pedigree</h3>
+            <p>
+              Our leadership doesn't just understand the market; we helped shape it. With over 100
+              years of collective experience in highly regulated sectors, we offer a level of strategic
+              depth that ensures your business is always on solid ground.
+            </p>
+          </article>
+
+          <article class="pillar-card" data-reveal>
+            <p class="pillar-card__index">02</p>
+            <h3>Radical Transparency</h3>
+            <p>
+              We believe that "frictionless" service begins with honesty. Our processes are open, our
+              data is verifiable, and our commitment to your success is absolute.
+            </p>
+          </article>
+
+          <article class="pillar-card" data-reveal>
+            <p class="pillar-card__index">03</p>
+            <h3>The One-Stop Standard</h3>
+            <p>
+              We provide a comprehensive ecosystem for product release and supply chain integrity. By
+              managing every touchpoint, we eliminate the gaps where risk usually resides.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section expertise" id="expertise">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Specialized Industry Expertise</p>
+          <h2>High-Consequence Sectors. No Room for Error.</h2>
+          <p class="section-intro">
+            We specialize in the high-consequence sectors where there is no room for error. Our expertise
+            is your insurance policy.
+          </p>
+        </div>
+
+        <div class="feature-stack">
+          <article class="feature-row" data-reveal>
+            <div class="feature-row__media feature-row__media--cannabis" aria-hidden="true" data-parallax="0.12"></div>
+            <div class="feature-row__content">
+              <p class="feature-row__kicker">Medical Cannabis &amp; Novel Products</p>
+              <h3>Pharmaceutical rigor for an evolving global frontier.</h3>
+              <p>
+                Navigating the frontier of medical cannabis requires more than just logistics, it requires
+                a partner who understands the nuance of shifting global compliance. We bring pharmaceutical
+                rigor to the cannabis space, ensuring every shipment is a gold standard delivery.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-row feature-row--reverse" data-reveal>
+            <div class="feature-row__media feature-row__media--pharma" aria-hidden="true" data-parallax="0.15"></div>
+            <div class="feature-row__content">
+              <p class="feature-row__kicker">Pharmaceuticals &amp; Nutraceuticals</p>
+              <h3>Care, precision, and EU-GMP proficient discipline at every stage.</h3>
+              <p>
+                From life-saving medicines to health-optimizing supplements, we apply EU-GMP proficient
+                standards to every stage. We treat your product with the same care and precision as the
+                patients who rely on them.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-row" data-reveal>
+            <div class="feature-row__media feature-row__media--regulatory" aria-hidden="true" data-parallax="0.1"></div>
+            <div class="feature-row__content">
+              <p class="feature-row__kicker">Regulatory Stewardship</p>
+              <h3>Routes to market that are swift, credible, and beyond reproach.</h3>
+              <p>
+                We don't just follow protocols; we master them. Our multi-jurisdictional expertise allows
+                us to navigate the most complex regulatory landscapes in the world, ensuring your route
+                to market is both swift and beyond reproach.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section capabilities" id="capabilities">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Integrated Capabilities</p>
+          <h2>From Source to Shelf</h2>
+          <p class="section-intro">
+            Our white-glove approach means we take full accountability for the delivery chain, allowing
+            you to focus on your core mission.
+          </p>
+        </div>
+
+        <div class="capability-stage">
+          <div class="capability-stage__intro" data-reveal>
+            <p class="eyebrow eyebrow--soft">Integrated by design</p>
+            <h3>Every touchpoint managed with clarity, compliance, and care.</h3>
+            <p>
+              Clairiva combines supply chain integrity, regulatory readiness, market entry planning, and
+              digital systems thinking into one accountable operating model.
+            </p>
+          </div>
+
+          <div class="capability-columns">
+            <article class="capability-column" data-reveal>
+              <p class="capability-column__kicker">Supply Chain Integrity &amp; Logistics</p>
+              <ul class="capability-list">
+                <li>
+                  <h3>Ethical Sourcing</h3>
+                  <p>
+                    We identify and qualify premier suppliers through a rigorous vetting process that
+                    prioritizes quality and ethical consistency.
+                  </p>
+                </li>
+                <li>
+                  <h3>Stability-Verified Logistics</h3>
+                  <p>
+                    Every step of our process is backed by reliable lab results. We ensure that product
+                    quality remains consistent and repeatable, from the point of origin to the final door.
+                  </p>
+                </li>
+                <li>
+                  <h3>Pre-Audit Excellence</h3>
+                  <p>
+                    We specialize in pre-audit support and audit preparation, ensuring your operations
+                    are always inspection-ready for international regulators.
+                  </p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="capability-column capability-column--accent" data-reveal>
+              <p class="capability-column__kicker">Strategic Growth &amp; Digital Innovation</p>
+              <ul class="capability-list">
+                <li>
+                  <h3>Market Entry Excellence</h3>
+                  <p>
+                    Our Go-To-Market strategies and customer engagement plans are built on data-driven
+                    insights and behavioral science, ensuring your brand resonates with patients, doctors,
+                    and pharmacists alike.
+                  </p>
+                </li>
+                <li>
+                  <h3>AI-Driven Asset Development</h3>
+                  <p>
+                    We leverage cutting-edge AI and digital asset development to create seamless,
+                    transparent systems that integrate directly with EMRs, EHRs, and global health systems.
+                  </p>
+                </li>
+                <li>
+                  <h3>Performance Accountability</h3>
+                  <p>
+                    Through deep data analytics and continuous performance management, we provide the
+                    metrics that prove our value and your growth.
+                  </p>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section leadership" id="leadership">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Leadership</p>
+          <h2>Experience You Can Lean On</h2>
+          <p class="section-intro">
+            We believe in Small Cost, Big Impact. Our team is composed of seasoned executives who have
+            scaled global enterprises and governed international standards.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <article class="leader-spotlight" data-reveal>
+            <p class="eyebrow eyebrow--soft">Featured leadership</p>
+            <h3>Adam Cole</h3>
+            <p class="leader-spotlight__role">Captain of Automation, AI &amp; Efficiency</p>
+            <p>
+              A serial entrepreneur with over two decades of experience, Adam has a proven history of
+              scaling ventures from local startups to global giants like McKesson. His leadership is
+              defined by technical brilliance and ethical governance.
+            </p>
+          </article>
+
+          <div class="leader-credentials">
+            <article class="credential-card" data-reveal>
+              <h3>The Pedigree of Excellence</h3>
+              <p>
+                Successfully led four companies to exits and raised multimillion-dollar funding rounds
+                for six separate ventures.
+              </p>
+            </article>
+
+            <article class="credential-card" data-reveal>
+              <h3>Global Recognition</h3>
+              <p>
+                Winner of the international blockchain hackathon judged by Vitalik Buterin and named
+                Canadian IT Professional of the Year.
+              </p>
+            </article>
+
+            <article class="credential-card" data-reveal>
+              <h3>Industry Stewardship</h3>
+              <p>
+                Serves on the Practitioner Board of the Association for Computing Machinery, keeping our
+                technology aligned with the forefront of global computer science standards.
+              </p>
+            </article>
+          </div>
+
+          <aside class="executive-roster" data-reveal>
+            <p class="eyebrow eyebrow--soft">Executive Leadership Team</p>
+            <ul>
+              <li>Adam O'Regan</li>
+              <li>Roe Sivanandan</li>
+              <li>Dave Paterson</li>
+              <li>Brad Eijtjes</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section trust-collection" id="trust-collection">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Trust Collection</p>
+          <h2>Proof, Distilled</h2>
+          <p class="section-intro">
+            Quick proof points for the teams who need certainty before they move.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="parallax-wrap trust-grid__item trust-grid__item--tall" data-parallax="0.24">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Integrity</p>
+              <p>Stability Verified. Every product release is backed by rigorous lab results and repeatable quality protocols.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap trust-grid__item" data-parallax="0.18">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Pedigree</p>
+              <p>100+ Years of Trust. Our executive team brings over a century of leadership from the world's most regulated industries.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap trust-grid__item" data-parallax="0.27">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Compliance</p>
+              <p>Beyond Borderless. Multi-jurisdictional expertise and EU-GMP proficiency for absolute regulatory peace of mind.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap trust-grid__item" data-parallax="0.2">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Network</p>
+              <p>Every Market, Hand-Picked. Our global network is built on long-standing relationships and verified supplier qualifications.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap trust-grid__item trust-grid__item--wide" data-parallax="0.14">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Stewardship</p>
+              <p>Friction-Free Delivery. We don't just fill gaps; we solve problems before they reach your doorstep.</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap trust-grid__item" data-parallax="0.23">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Innovation</p>
+              <p>Transparent Tech. AI assets designed for seamless integration with global health systems (EMR/EHR/PMS).</p>
+            </article>
+          </div>
+
+          <div class="parallax-wrap trust-grid__item trust-grid__item--wide" data-parallax="0.17">
+            <article class="trust-card" data-reveal>
+              <p class="trust-card__category">Accountability</p>
+              <p>Audit-Ready, Always. Providing the pre-audit support required to meet the world's most stringent standards.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing-cta" id="closing-cta">
+        <div class="closing-cta__panel" data-reveal>
+          <p class="eyebrow">Ready when precision matters</p>
+          <h2>Trusted partners create frictionless growth in complex markets.</h2>
+          <p>
+            When every route to market is shaped by regulation, quality, and reputation, Clairiva brings
+            the strategic depth to keep your supply chain on solid ground.
+          </p>
+          <a class="button button--primary" href="#hero">Experience Frictionless Growth.</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <noscript>This homepage works best with JavaScript enabled for motion and section reveals.</noscript>
+  <script type="module" src="home.js"></script>
+</body>
+</html>
