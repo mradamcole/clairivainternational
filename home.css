@@ -34,13 +34,17 @@ body {
 }
 
 body {
+  background: #ffffff;
+  color: var(--text-strong);
+  font-family: "Rajdhani", sans-serif;
+  overflow-x: hidden;
+}
+
+body[data-ready="true"] {
   background:
     radial-gradient(circle at top left, rgba(18, 4, 46, 0.05), transparent 28rem),
     radial-gradient(circle at 85% 8%, rgba(86, 104, 162, 0.08), transparent 22rem),
     var(--page-bg);
-  color: var(--text-strong);
-  font-family: "Rajdhani", sans-serif;
-  overflow-x: hidden;
 }
 
 a {
@@ -78,18 +82,19 @@ a {
 .home-shell {
   position: relative;
   min-height: 100vh;
-  opacity: 0;
-  transition: opacity 420ms ease;
-}
-
-body[data-ready="true"] .home-shell {
-  opacity: 1;
 }
 
 .page-grid,
 .page-orbit {
   position: fixed;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+body[data-ready="true"] .page-grid,
+body[data-ready="true"] .page-orbit {
+  opacity: 1;
 }
 
 .page-grid {
@@ -187,6 +192,12 @@ body[data-ready="true"] .home-shell {
   position: relative;
   z-index: 1;
   padding-top: clamp(6rem, 13vw, 9rem);
+  opacity: 0;
+  transition: opacity 420ms ease;
+}
+
+body[data-ready="true"] .home-content {
+  opacity: 1;
 }
 
 .section {

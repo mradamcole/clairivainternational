@@ -157,7 +157,9 @@ async function showHomepage() {
 
   setupReveals();
   setupParallax();
-  document.body.dataset.ready = "true";
+  window.requestAnimationFrame(() => {
+    document.body.dataset.ready = "true";
+  });
 }
 
 if (typeof reducedMotionQuery.addEventListener === "function") {

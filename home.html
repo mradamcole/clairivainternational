@@ -18,7 +18,77 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="media/clairiva-logo.svg">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      background: #fff;
+      color: #140f21;
+      overflow-x: hidden;
+    }
+
+    .brand-stage {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .brand-logo {
+      position: fixed;
+      left: 10px;
+      top: 5px;
+      height: 50px;
+      width: auto;
+      display: block;
+      opacity: 1;
+    }
+
+    .brand-wordmark {
+      position: fixed;
+      left: 70px;
+      top: 5px;
+      width: 320px;
+      opacity: 1;
+      color: #12042e;
+      text-align: left;
+    }
+
+    .brand-line {
+      width: 100%;
+      font-family: "Montserrat", "Arial Black", Arial, sans-serif;
+      font-weight: 900;
+      line-height: 0.9;
+      white-space: nowrap;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-line--top {
+      margin-bottom: 0.08em;
+      font-size: 26px;
+    }
+
+    .brand-line--bottom {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      transform: scaleX(0.985);
+      transform-origin: left top;
+    }
+
+    .page-grid,
+    .page-orbit,
+    .home-content {
+      opacity: 0;
+    }
+  </style>
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
