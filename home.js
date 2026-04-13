@@ -53,6 +53,7 @@ function layoutTrustScatter() {
   }
 
   const usable = Math.max(1, cw - pad * 2);
+  const vw = window.innerWidth || 1;
 
   const specs = trustScatterItems.map((wrap) => {
     const wide = Math.random() < 0.48;
@@ -73,8 +74,10 @@ function layoutTrustScatter() {
     const nudgeX = `${((Math.random() - 0.5) * 10).toFixed(1)}px`;
     const nudgeY = `${((Math.random() - 0.5) * 8).toFixed(1)}px`;
     const z = String(2 + Math.floor(Math.random() * 10));
+    const enterDir = Math.random() < 0.5 ? -1 : 1;
+    const enterDistPx = Math.round(vw * (0.4 + Math.random() * 0.35));
 
-    return { wrap, widthPx, tiltDeg, padRem, radiusPx, nudgeX, nudgeY, z };
+    return { wrap, widthPx, tiltDeg, padRem, radiusPx, nudgeX, nudgeY, z, enterDir, enterDistPx };
   });
 
   for (const s of specs) {
@@ -83,6 +86,8 @@ function layoutTrustScatter() {
     s.wrap.style.left = "0px";
     s.wrap.style.top = "0px";
     s.wrap.style.zIndex = s.z;
+    s.wrap.dataset.trustEnterDir = String(s.enterDir);
+    s.wrap.dataset.trustEnterDist = String(s.enterDistPx);
     s.wrap.style.setProperty("--trust-rotate", `${s.tiltDeg.toFixed(2)}deg`);
     s.wrap.style.setProperty("--trust-nudge-x", s.nudgeX);
     s.wrap.style.setProperty("--trust-nudge-y", s.nudgeY);
@@ -315,6 +320,37 @@ function setupReveals() {
   });
 }
 
+function updateTrustScrollEnter() {
+  if (!trustScatterGrid || trustScatterItems.length === 0) {
+    return;
+  }
+
+  if (reducedMotionQuery.matches) {
+    trustScatterItems.forEach((wrap) => {
+      wrap.style.setProperty("--trust-enter-x", "0px");
+    });
+    return;
+  }
+
+  const viewportHeight = window.innerHeight || 1;
+  const gridTop = trustScatterGrid.getBoundingClientRect().top;
+  const rangeStart = viewportHeight * 1.05;
+  const rangeEnd = viewportHeight * 0.26;
+  const span = Math.max(1, rangeStart - rangeEnd);
+  let progress = (rangeStart - gridTop) / span;
+  progress = Math.max(0, Math.min(1, progress));
+  progress = progress * progress * (3 - 2 * progress);
+
+  trustScatterItems.forEach((wrap) => {
+    const dir = Number.parseFloat(wrap.dataset.trustEnterDir || "1");
+    const dist = Number.parseFloat(wrap.dataset.trustEnterDist || "0");
+    const sign = Number.isFinite(dir) && dir < 0 ? -1 : 1;
+    const amplitude = Number.isFinite(dist) && dist > 0 ? dist : Math.round(viewportHeight * 0.55);
+    const enterX = (1 - progress) * sign * amplitude;
+    wrap.style.setProperty("--trust-enter-x", `${enterX.toFixed(2)}px`);
+  });
+}
+
 function updateParallax() {
   rafId = 0;
 
@@ -322,6 +358,7 @@ function updateParallax() {
     parallaxElements.forEach((element) => {
       element.style.setProperty("--parallax-y", "0px");
     });
+    updateTrustScrollEnter();
     return;
   }
 
@@ -348,6 +385,8 @@ function updateParallax() {
 
     element.style.setProperty("--parallax-y", `${offset.toFixed(2)}px`);
   });
+
+  updateTrustScrollEnter();
 }
 
 function requestParallaxUpdate() {

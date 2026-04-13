@@ -679,7 +679,11 @@ p {
   top: 0;
   box-sizing: border-box;
   width: min(18rem, 92%);
-  transform: translate3d(var(--trust-nudge-x, 0px), calc(var(--parallax-y, 0px) + var(--trust-nudge-y, 0px)), 0)
+  transform: translate3d(
+      calc(var(--trust-nudge-x, 0px) + var(--trust-enter-x, 0px)),
+      calc(var(--parallax-y, 0px) + var(--trust-nudge-y, 0px)),
+      0
+    )
     rotate(var(--trust-rotate, 0deg));
 }
 
